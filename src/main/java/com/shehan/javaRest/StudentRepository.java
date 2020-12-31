@@ -27,4 +27,15 @@ public class StudentRepository {
 	{
 		return students;
 	}
+	
+	public Student getStudent(int id)
+	{
+		for(Student a : students)
+		{
+			if(a.getId()==id)
+				return a;
+		}
+		
+		return null;
+	}
 }
