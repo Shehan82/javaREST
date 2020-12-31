@@ -9,7 +9,7 @@ public class StudentRepository {
 	
 	public StudentRepository()
 	{
-		students = new ArrayList<>();
+		students = new ArrayList<>(); //set the initial value for the students object
 		
 		Student s1 = new Student();
 		s1.setName("shehan");
@@ -21,5 +21,10 @@ public class StudentRepository {
 		
 		students.add(s1);
 		students.add(s2);
+	}
+	
+	public List<Student> getStudents()
+	{
+		return students;
 	}
 }
