@@ -7,7 +7,14 @@ public class Student {
 	
 	private String name;
 	private int age;
+	private int id;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
