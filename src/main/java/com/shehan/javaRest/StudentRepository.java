@@ -32,10 +32,16 @@ public class StudentRepository {
 	{
 		for(Student a : students)
 		{
-			if(a.getId()==id)
+			if(a.getId()==id)  
 				return a;
 		}
 		
 		return null;
+	}
+
+	public void create(Student a) {
+		// TODO Auto-generated method stub
+		students.add(a);
+		
 	}
 }
