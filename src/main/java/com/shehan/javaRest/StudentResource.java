@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
@@ -17,7 +18,14 @@ public class StudentResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Student> getStudent()
 	{
-		return students.getStudents();
+		return students.getStudents(); 
+	}
+	
+	@POST
+	@Path("create")
+	public Student createStudent(Student a)
+	{
+		return a;
 	}
 
 }
