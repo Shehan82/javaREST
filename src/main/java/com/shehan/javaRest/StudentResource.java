@@ -23,8 +23,11 @@ public class StudentResource {
 	
 	@POST
 	@Path("create")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Student createStudent(Student a)
 	{
+		System.out.println("how are you");
+		students.create(a);
 		return a;
 	}
 
