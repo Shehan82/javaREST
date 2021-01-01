@@ -12,10 +12,12 @@ public class StudentRepository {
 		students = new ArrayList<>(); //set the initial value for the students object
 		
 		Student s1 = new Student();
+		s1.setId(1);
 		s1.setName("shehan");
 		s1.setAge(23);
 		
 		Student s2 = new Student();
+		s2.setId(2);
 		s2.setName("Sandeepa");
 		s2.setAge(21);
 		
