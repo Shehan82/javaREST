@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -19,6 +20,14 @@ public class StudentResource {
 	public List<Student> getStudent()
 	{
 		return students.getStudents(); 
+	}
+	
+	@GET
+	@Path("student/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Student getStudent(@PathParam("id") int id)
+	{
+		return students.getStudent(id);
 	}
 	
 	@POST
