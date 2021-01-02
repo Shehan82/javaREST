@@ -1,28 +1,48 @@
 package com.shehan.javaRest;
 
 import java.util.ArrayList;
+import java.sql.*;
 import java.util.List;
 
 public class StudentRepository {
 	
 	List<Student> students;
 	
-	public StudentRepository()
+	Connection con = null;
+	
+//	public StudentRepository()
+//	{
+//		students = new ArrayList<>(); //set the initial value for the students object
+//		
+//		Student s1 = new Student();
+//		s1.setId(1);
+//		s1.setName("shehan");
+//		s1.setAge(23);
+//		
+//		Student s2 = new Student();
+//		s2.setId(2);
+//		s2.setName("Sandeepa");
+//		s2.setAge(21);
+//		
+//		students.add(s1);
+//		students.add(s2);
+//	}
+	
+	public StudentRepository() throws ClassNotFoundException
 	{
-		students = new ArrayList<>(); //set the initial value for the students object
+		String url = "jdbc:mysql://localhost/restdb";
+		String userName = "root";
+		String password = "";
+		try 
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url,userName,password);
+			
+		} catch (SQLException e) {
+			
+			System.out.println(e);
+		}
 		
-		Student s1 = new Student();
-		s1.setId(1);
-		s1.setName("shehan");
-		s1.setAge(23);
-		
-		Student s2 = new Student();
-		s2.setId(2);
-		s2.setName("Sandeepa");
-		s2.setAge(21);
-		
-		students.add(s1);
-		students.add(s2);
 	}
 	
 	public List<Student> getStudents()
