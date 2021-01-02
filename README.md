@@ -1,2 +1,2 @@
 # javaRest
-Restfull API using java
+A Restfull java API
