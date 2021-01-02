@@ -6,7 +6,7 @@ import java.util.List;
 
 public class StudentRepository {
 	
-	List<Student> students;
+	
 	
 	Connection con = null;
 	
@@ -47,6 +47,27 @@ public class StudentRepository {
 	
 	public List<Student> getStudents()
 	{
+		List<Student> students = new ArrayList<>();
+		String query = "select * from students";
+		Statement st;
+		try 
+		{
+			st = con.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			while(rs.next())
+			{
+				Student stu = new Student();
+				stu.setId(rs.getInt(1));
+				stu.setName(rs.getString(2));
+				stu.setAge(rs.getInt(3));
+				
+			}
+		} 
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
 		return students;
 	}
 	
